@@ -60,6 +60,19 @@ The **ClickUp Intelligence Skill Suite** equips autonomous agents with structure
 
 ---
 
+## ⚡ Model Context Protocol (MCP) Server
+
+This repository includes a production-ready, zero-dependency **ClickUp MCP Server** (`mcp/clickup_mcp_server.js`) compliant with the Model Context Protocol (MCP) `2024-11-05` standard.
+
+### Features
+* **10 Native Tools**: `clickup_get_workspaces`, `clickup_get_spaces`, `clickup_get_lists`, `clickup_get_tasks`, `clickup_create_task`, `clickup_create_subtask`, `clickup_add_comment`, `clickup_get_comments`, `clickup_set_custom_field`.
+* **Zero External Dependencies**: Operates over stdio JSON-RPC 2.0 using Node.js built-ins.
+* **Universal Compatibility**: Plug-and-play with Claude Desktop, Cursor, Antigravity, and GenPark agents.
+
+See the [ClickUp MCP Integration Guide](references/clickup_mcp_integration.md) for full configuration steps.
+
+---
+
 ## 🚀 Quick Start
 
 ### 1. Environment Configuration
@@ -116,10 +129,13 @@ run().catch(console.error);
 clickup-intelligence-skill/
 ├── README.md                              # Main suite overview and quickstart
 ├── SKILL.md                               # Unified top-level skill definition
+├── mcp/
+│   └── clickup_mcp_server.js              # Standard MCP stdio server (JSON-RPC 2.0)
 ├── references/
 │   ├── clickup_api_reference.md           # API v2 endpoint specifications
 │   ├── clickup_webhooks_guide.md          # Webhook events and payload schemas
-│   └── clickup_brain_architecture.md      # ClickUp Brain AI integration patterns
+│   ├── clickup_brain_architecture.md      # ClickUp Brain AI integration patterns
+│   └── clickup_mcp_integration.md         # MCP server setup for Claude/Cursor/Antigravity
 ├── scripts/
 │   ├── clickup_api_helper.js              # Native Node.js HTTPS client wrapper
 │   ├── example_task_sprint_orchestration.js # Sprint board generator & task decomposing
