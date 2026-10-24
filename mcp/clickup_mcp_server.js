@@ -143,14 +143,16 @@ class ClickUpMcpServer {
   constructor() {
     this.token = process.env.CLICKUP_API_TOKEN;
     this.client = this.token ? new ClickUpClient(this.token) : null;
+    this.rl = null;
+  }
+
+  start() {
     this.rl = readline.createInterface({
       input: process.stdin,
       output: process.stdout,
       terminal: false
     });
-  }
 
-  start() {
     this.rl.on('line', (line) => {
       if (!line.trim()) return;
       try {
@@ -162,6 +164,13 @@ class ClickUpMcpServer {
     });
 
     process.stderr.write(`[${SERVER_NAME}] MCP Server started on stdio\n`);
+  }
+
+  close() {
+    if (this.rl) {
+      this.rl.close();
+      this.rl = null;
+    }
   }
 
   sendResponse(id, result) {

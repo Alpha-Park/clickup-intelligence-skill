@@ -1,0 +1,41 @@
+{
+  "name": "@alphapark/clickup-intelligence-skill",
+  "version": "1.0.0",
+  "description": "Enterprise-grade ClickUp Intelligence skill suite and MCP server for autonomous AI agents",
+  "main": "scripts/clickup_api_helper.js",
+  "bin": {
+    "clickup-agent": "./bin/clickup-agent.js"
+  },
+  "scripts": {
+    "test": "node --test tests/client.test.js tests/mcp.test.js tests/webhook.test.js",
+    "mcp": "node mcp/clickup_mcp_server.js",
+    "cli": "node bin/clickup-agent.js",
+    "standup": "node scripts/example_knowledge_search.js",
+    "sprint": "node scripts/example_task_sprint_orchestration.js",
+    "webhook": "node scripts/example_webhook_listener.js"
+  },
+  "keywords": [
+    "clickup",
+    "mcp",
+    "model-context-protocol",
+    "ai-agent",
+    "genpark",
+    "automation",
+    "project-management",
+    "sprint-automation",
+    "clickup-brain"
+  ],
+  "author": "krispang <krispang1020@gmail.com>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Alpha-Park/clickup-intelligence-skill.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Alpha-Park/clickup-intelligence-skill/issues"
+  },
+  "homepage": "https://github.com/Alpha-Park/clickup-intelligence-skill#readme",
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}

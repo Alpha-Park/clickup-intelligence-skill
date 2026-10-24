@@ -1,6 +1,7 @@
 # ClickUp Intelligence Skill Suite
 
 [![GenPark Agent Skills](https://img.shields.io/badge/GenPark-Agent%20Skills-6366f1.svg)](https://github.com/Alpha-Park)
+[![CI](https://github.com/Alpha-Park/clickup-intelligence-skill/actions/workflows/ci.yml/badge.svg)](https://github.com/Alpha-Park/clickup-intelligence-skill/actions)
 [![ClickUp API v2](https://img.shields.io/badge/ClickUp-API%20v2-7b68ee.svg)](https://clickup.com/api)
 [![ClickUp Brain](https://img.shields.io/badge/ClickUp-Brain%20AI-ff007f.svg)](https://clickup.com/features/ai)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
@@ -70,6 +71,32 @@ This repository includes a production-ready, zero-dependency **ClickUp MCP Serve
 * **Universal Compatibility**: Plug-and-play with Claude Desktop, Cursor, Antigravity, and GenPark agents.
 
 See the [ClickUp MCP Integration Guide](references/clickup_mcp_integration.md) for full configuration steps.
+
+---
+
+## 💻 CLI & npm Usage
+
+The suite features an interactive unified CLI tool (`bin/clickup-agent.js`):
+
+```bash
+# Test connection & retrieve workspace details
+node bin/clickup-agent.js test-connection
+
+# Launch the Model Context Protocol (MCP) server
+node bin/clickup-agent.js mcp
+
+# Generate automated daily standup digest
+node bin/clickup-agent.js standup
+
+# Orchestrate sprint tasks and epic decomposition
+node bin/clickup-agent.js sprint
+
+# Run local webhook ingress receiver
+node bin/clickup-agent.js webhook 3000
+
+# Run automated unit & integration test suite
+npm test
+```
 
 ---
 
